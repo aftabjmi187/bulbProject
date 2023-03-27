@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Bulb on of project</title>
+   <style>
+      #bulb{
+         margin-top: 20px;
+         text-align: center;
+         border: 1px solid black;
+         padding: 20px;
+
+      }
+   </style>
+</head>
+<body>
+   <h1 style="text-align:center;">Here is my Bulb controll</h1>
+   <button onclick="turnOff()">Turn off</button>
+   <button onclick="turnOn()">Turn On</button>
+   <button id="button-id" onclick="toggleButton()">ON</button>
+
+   <div id="bulb">
+      <img id="imgobb" src="./Assets/off.jpg" alt="off bulb">
+   </div>
+
+
+   <script>
+
+      const toggleButton=()=>{
+         let imgOb=document.getElementById("imgobb");
+         let srcValue=imgOb.getAttribute("src");
+
+
+         let buttonOb=document.getElementById("button-id");
+
+         if(srcValue=="./Assets/off.jpg"){
+          
+            turnOn();
+          buttonOb.innerHTML="OFF";
+           
+         }
+         else{
+           
+            turnOff();
+           buttonOb.innerHTML="ON";
+            
+         }
+
+
+      }
+
+      // turn on fuinton
+
+      const turnOn=()=>{
+         // how on bulb
+         let imgOb=document.getElementById("imgobb");
+         imgOb.setAttribute("src","./Assets/on.jpg");
+        
+      }
+
+      const turnOff=()=>{
+         let imgOb=document.getElementById("imgobb");
+         imgOb.setAttribute("src","./Assets/off.jpg");
+       
+      }
+   </script>
+</body>
+</html>
